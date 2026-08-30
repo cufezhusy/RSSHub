@@ -10149,6 +10149,27 @@
   "/dongqiudi/top_news/:id?": [
     "HendricksZheng"
   ],
+  "/dr/indland": [
+    "cufezhusy"
+  ],
+  "/dr/nyheder": [
+    "cufezhusy"
+  ],
+  "/dr/penge": [
+    "cufezhusy"
+  ],
+  "/dr/politik": [
+    "cufezhusy"
+  ],
+  "/dr/sport": [
+    "cufezhusy"
+  ],
+  "/dr/udland": [
+    "cufezhusy"
+  ],
+  "/dr/viden": [
+    "cufezhusy"
+  ],
   "/dribbble/keyword/:keyword": [
     "DIYgod",
     "loganrockmore"

@@ -980,6 +980,13 @@ export type RoutePath =
   | `/douyu/post/:id`
   | `/douyu/room/:id`
   | `/dpm/exhibitions/:type?`
+  | `/dr/indland`
+  | `/dr/nyheder`
+  | `/dr/penge`
+  | `/dr/politik`
+  | `/dr/sport`
+  | `/dr/udland`
+  | `/dr/viden`
   | `/dribbble/keyword/:keyword`
   | `/dribbble/popular/:timeframe?`
   | `/dribbble/user/:name`

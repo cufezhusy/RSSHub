@@ -132770,6 +132770,224 @@
     "description": "::: tip\n\n- 可以通过头条新闻 + 参数过滤的形式获得早报、专题等内容。\n\n:::",
     "lang": "zh-CN"
   },
+  "dr": {
+    "routes": {
+      "/indland": {
+        "path": "/indland",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/dr/indland",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.dr.dk/nyheder/indland"
+            ],
+            "target": "/indland"
+          }
+        ],
+        "name": "Indland",
+        "maintainers": [
+          "cufezhusy"
+        ],
+        "description": "DRs indlandsnyheder, baseret på den officielle RSS-feed Indland. RSSHub forsøger at hente den fulde artikeltekst fra dr.dk. Hvis den fulde tekst ikke kan hentes, bruges beskrivelsen fra den officielle RSS-feed.",
+        "location": "indland.ts",
+        "module": "() => import('@/routes/dr/indland.ts')"
+      },
+      "/nyheder": {
+        "path": "/nyheder",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/dr/nyheder",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.dr.dk/nyheder"
+            ],
+            "target": "/nyheder"
+          }
+        ],
+        "name": "Seneste nyt (Kort nyt)",
+        "maintainers": [
+          "cufezhusy"
+        ],
+        "description": "DRs seneste nyheder, baseret på den officielle RSS-feed Kort nyt (<https://www.dr.dk/nyheder/service/feeds/senestenyt>). RSSHub forsøger at hente den fulde artikeltekst fra dr.dk. Hvis den fulde tekst ikke kan hentes, bruges beskrivelsen fra den officielle RSS-feed.",
+        "location": "nyheder.ts",
+        "module": "() => import('@/routes/dr/nyheder.ts')"
+      },
+      "/penge": {
+        "path": "/penge",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/dr/penge",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.dr.dk/nyheder/penge"
+            ],
+            "target": "/penge"
+          }
+        ],
+        "name": "Penge",
+        "maintainers": [
+          "cufezhusy"
+        ],
+        "description": "DRs økonominyheder, baseret på den officielle RSS-feed Penge. RSSHub forsøger at hente den fulde artikeltekst fra dr.dk. Hvis den fulde tekst ikke kan hentes, bruges beskrivelsen fra den officielle RSS-feed.",
+        "location": "penge.ts",
+        "module": "() => import('@/routes/dr/penge.ts')"
+      },
+      "/politik": {
+        "path": "/politik",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/dr/politik",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.dr.dk/nyheder/politik"
+            ],
+            "target": "/politik"
+          }
+        ],
+        "name": "Politik",
+        "maintainers": [
+          "cufezhusy"
+        ],
+        "description": "DRs politiske nyheder, baseret på den officielle RSS-feed Politik. RSSHub forsøger at hente den fulde artikeltekst fra dr.dk. Hvis den fulde tekst ikke kan hentes, bruges beskrivelsen fra den officielle RSS-feed.",
+        "location": "politik.ts",
+        "module": "() => import('@/routes/dr/politik.ts')"
+      },
+      "/sport": {
+        "path": "/sport",
+        "categories": [
+          "sport"
+        ],
+        "example": "/dr/sport",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.dr.dk/sporten"
+            ],
+            "target": "/sport"
+          }
+        ],
+        "name": "Sport",
+        "maintainers": [
+          "cufezhusy"
+        ],
+        "description": "DRs sportsnyheder, baseret på den officielle RSS-feed Sport. RSSHub forsøger at hente den fulde artikeltekst fra dr.dk. Hvis den fulde tekst ikke kan hentes, bruges beskrivelsen fra den officielle RSS-feed.",
+        "location": "sport.ts",
+        "module": "() => import('@/routes/dr/sport.ts')"
+      },
+      "/udland": {
+        "path": "/udland",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/dr/udland",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.dr.dk/nyheder/udland"
+            ],
+            "target": "/udland"
+          }
+        ],
+        "name": "Udland",
+        "maintainers": [
+          "cufezhusy"
+        ],
+        "description": "DRs udlandsnyheder, baseret på den officielle RSS-feed Udland. RSSHub forsøger at hente den fulde artikeltekst fra dr.dk. Hvis den fulde tekst ikke kan hentes, bruges beskrivelsen fra den officielle RSS-feed.",
+        "location": "udland.ts",
+        "module": "() => import('@/routes/dr/udland.ts')"
+      },
+      "/viden": {
+        "path": "/viden",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/dr/viden",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.dr.dk/nyheder/viden"
+            ],
+            "target": "/viden"
+          }
+        ],
+        "name": "Viden",
+        "maintainers": [
+          "cufezhusy"
+        ],
+        "description": "DRs videnskabsnyheder, baseret på den officielle RSS-feed Viden. RSSHub forsøger at hente den fulde artikeltekst fra dr.dk. Hvis den fulde tekst ikke kan hentes, bruges beskrivelsen fra den officielle RSS-feed.",
+        "location": "viden.ts",
+        "module": "() => import('@/routes/dr/viden.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "DR (Danmarks Radio)",
+    "url": "dr.dk",
+    "lang": "da"
+  },
   "dribbble": {
     "routes": {
       "/keyword/:keyword": {
