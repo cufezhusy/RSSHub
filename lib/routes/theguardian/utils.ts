@@ -2,6 +2,7 @@ import { load } from 'cheerio';
 
 import type { Data, DataItem } from '@/types';
 import cache from '@/utils/cache';
+import logger from '@/utils/logger';
 import ofetch from '@/utils/ofetch';
 import parser from '@/utils/rss-parser';
 
@@ -40,21 +41,32 @@ const processFeed = (data: string) => {
 export const getFeed = async (cfg: { link: string; title: string; rss: string }): Promise<Data> => {
     const feed = await parser.parseURL(cfg.rss);
     const items = await Promise.all(
-        feed.items.slice(0, 10).map((item) =>
-            cache.tryGet(item.link!, async () => {
-                const response = await ofetch(item.link!);
-                const description = processFeed(response);
-                const rawCategories: unknown[] | undefined = item.categories;
+        feed.items.slice(0, 10).map(async (item) => {
+            const rawCategories: unknown[] | undefined = item.categories;
+            const summary = {
+                title: item.title,
+                description: item.content,
+                pubDate: item.pubDate,
+                link: item.link,
+                category: rawCategories?.map((c) => (c as { _: string })._),
+            };
 
-                return {
-                    title: item.title,
-                    description: description ?? item.content,
-                    pubDate: item.pubDate,
-                    link: item.link,
-                    category: rawCategories?.map((c) => (c as { _: string })._),
-                };
-            })
-        )
+            try {
+                return await cache.tryGet(item.link!, async () => {
+                    const response = await ofetch(item.link!);
+                    const description = processFeed(response);
+
+                    return {
+                        ...summary,
+                        description: description ?? item.content,
+                    };
+                });
+            } catch (error) {
+                // Keep the official RSS description when a single article cannot be fetched.
+                logger.warn(`Failed to fetch Guardian article ${item.link}: ${error}`);
+                return summary;
+            }
+        })
     );
 
     return {
